@@ -367,6 +367,57 @@
             margin-bottom: 1rem;
         }
 
+        /* Certifications Section */
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+         .certification-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            border: 1px solid rgba(0, 212, 255, 0.1);
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .certification-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent);
+            box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
+        }
+
+        .certification-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-bottom: 2px solid rgba(0, 212, 255, 0.2);
+        }
+
+        .certification-content {
+            padding: 1.5rem;
+        }
+
+        .certification-content h3 {
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .certification-content .issuer {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .certification-content p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
         /* Thinking Section */
         .thinking-grid {
             display: grid;
@@ -482,6 +533,7 @@
             <li><a href="#experience">Experience</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#achievements">Achievements</a></li>
+            <li><a href="#certifications">Certifications</a></li>
             <li><a href="#thinking">Thinking</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
