@@ -18,28 +18,55 @@
         .nav-links a { text-decoration: none; color: var(--gray); font-size: 0.9rem; font-weight: 500; transition: color 0.3s; }
         .nav-links a:hover { color: var(--navy); }
         .hero { min-height: 100vh; display: flex; align-items: center; background: linear-gradient(160deg, var(--light-gray) 0%, var(--white) 50%, #EBF8FF 100%); padding-top: 80px; position: relative; overflow: hidden; }
-        .hero-content { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 80px; align-items: center; position: relative; z-index: 1; }
-        .hero-text h1 { font-family: 'Playfair Display', serif; font-size: 3.8rem; color: var(--navy); margin-bottom: 12px; line-height: 1.15; }
-        .hero-text .tagline { font-size: 1.3rem; color: var(--accent); font-weight: 600; margin-bottom: 28px; }
-        .hero-text p { font-size: 1.1rem; color: var(--gray); margin-bottom: 36px; line-height: 1.8; }
-        .hero-stats { display: flex; gap: 48px; margin-bottom: 40px; }
-        .stat-number { font-size: 2.8rem; font-weight: 700; color: var(--navy); line-height: 1; }
-        .stat-label { font-size: 0.8rem; color: var(--gray); text-transform: uppercase; letter-spacing: 1.5px; margin-top: 8px; }
+        .hero-content { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px; align-items: center; position: relative; z-index: 1; }
+        .hero-text h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; color: var(--navy); margin-bottom: 12px; line-height: 1.15; }
+        .hero-text .tagline { font-size: 1.2rem; color: var(--accent); font-weight: 600; margin-bottom: 24px; }
+        .hero-text p { font-size: 1.05rem; color: var(--gray); margin-bottom: 32px; line-height: 1.8; }
+        .hero-stats { display: flex; gap: 40px; margin-bottom: 36px; }
+        .stat-number { font-size: 2.5rem; font-weight: 700; color: var(--navy); line-height: 1; }
+        .stat-label { font-size: 0.75rem; color: var(--gray); text-transform: uppercase; letter-spacing: 1.5px; margin-top: 8px; }
         .cta-buttons { display: flex; gap: 16px; }
-        .btn { padding: 16px 32px; border-radius: 10px; font-weight: 600; text-decoration: none; transition: all 0.3s ease; font-size: 0.95rem; }
+        .btn { padding: 14px 28px; border-radius: 10px; font-weight: 600; text-decoration: none; transition: all 0.3s ease; font-size: 0.9rem; }
         .btn-primary { background: var(--navy); color: var(--white); box-shadow: 0 4px 14px rgba(27, 54, 93, 0.25); }
         .btn-primary:hover { background: var(--navy-light); transform: translateY(-2px); }
         .btn-secondary { background: transparent; color: var(--navy); border: 2px solid var(--navy); }
         .btn-secondary:hover { background: var(--navy); color: var(--white); }
-        .hero-cards { position: relative; width: 100%; height: 400px; }
-        .floating-card { position: absolute; background: var(--white); padding: 24px 28px; border-radius: 16px; box-shadow: 0 15px 50px rgba(0,0,0,0.08); }
-        .floating-card.card-1 { top: 0; left: 20px; animation: float 6s ease-in-out infinite; }
-        .floating-card.card-2 { top: 120px; right: 0; animation: float 6s ease-in-out infinite 1s; }
-        .floating-card.card-3 { bottom: 40px; left: 40px; animation: float 6s ease-in-out infinite 2s; }
-        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
-        .card-icon { width: 48px; height: 48px; background: linear-gradient(135deg, var(--accent) 0%, var(--navy) 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.4rem; margin-bottom: 12px; }
-        .floating-card h4 { font-size: 1rem; color: var(--charcoal); margin-bottom: 4px; }
-        .floating-card p { font-size: 0.85rem; color: var(--gray); margin: 0; }
+        
+        /* FIXED: Hero cards - vertical stack layout */
+        .hero-visual { display: flex; flex-direction: column; gap: 20px; align-items: flex-start; }
+        .floating-card { 
+            background: var(--white); 
+            padding: 20px 24px; 
+            border-radius: 16px; 
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08); 
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            min-width: 280px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .floating-card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.12);
+        }
+        .floating-card:nth-child(1) { margin-left: 0; }
+        .floating-card:nth-child(2) { margin-left: 40px; }
+        .floating-card:nth-child(3) { margin-left: 20px; }
+        .card-icon { 
+            width: 52px; 
+            height: 52px; 
+            background: linear-gradient(135deg, var(--accent) 0%, var(--navy) 100%); 
+            border-radius: 12px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            color: white; 
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        .card-content h4 { font-size: 1rem; color: var(--charcoal); margin-bottom: 2px; font-weight: 600; }
+        .card-content p { font-size: 0.85rem; color: var(--gray); margin: 0; }
+        
         section { padding: 120px 0; }
         .section-header { text-align: center; margin-bottom: 70px; }
         .section-header h2 { font-family: 'Playfair Display', serif; font-size: 2.8rem; color: var(--navy); margin-bottom: 18px; }
@@ -96,14 +123,56 @@
         .contact-text { font-weight: 600; font-size: 0.95rem; }
         footer { background: var(--charcoal); color: var(--white); text-align: center; padding: 50px 0; }
         footer p { color: rgba(255,255,255,0.5); font-size: 0.9rem; }
-        @media (max-width: 1024px) { .hero-content { grid-template-columns: 1fr; text-align: center; } .hero-stats { justify-content: center; } .cta-buttons { justify-content: center; } .hero-visual { display: none; } .projects-grid, .cert-grid, .articles-grid { grid-template-columns: 1fr; } }
+        @media (max-width: 1024px) { .hero-content { grid-template-columns: 1fr; text-align: center; } .hero-stats { justify-content: center; } .cta-buttons { justify-content: center; } .hero-visual { align-items: center; } .floating-card { margin-left: 0 !important; } .projects-grid, .cert-grid, .articles-grid { grid-template-columns: 1fr; } }
         @media (max-width: 768px) { .hero-text h1 { font-size: 2.5rem; } .timeline::before { left: 20px; } .timeline-item, .timeline-item:nth-child(even) { padding-left: 60px; padding-right: 0; justify-content: flex-start; } .timeline-content::before, .timeline-item:nth-child(odd) .timeline-content::before, .timeline-item:nth-child(even) .timeline-content::before { left: -40px; } .nav-links { display: none; } .contact-links { flex-direction: column; align-items: center; } .contact-link { width: 100%; max-width: 300px; justify-content: center; } }
     </style>
 </head>
 <body>
     <nav><div class="container"><a href="#" class="logo">Saravanan Kuppan</a><ul class="nav-links"><li><a href="#experience">Experience</a></li><li><a href="#projects">Projects</a></li><li><a href="#certifications">Certifications</a></li><li><a href="#thinking">Insights</a></li><li><a href="#contact">Contact</a></li></ul></div></nav>
 
-    <section class="hero" id="home"><div class="container"><div class="hero-content"><div class="hero-text"><h1>Saravanan Kuppan</h1><p class="tagline">Senior Technical Program Manager | Data & AI Platforms</p><p>Technical Program Manager with 19+ years in financial services, specializing in building highly scalable data platforms and AI-powered solutions within regulated banking environments. Passionate about solving complex technical challenges and enabling engineering excellence.</p><div class="hero-stats"><div class="stat"><div class="stat-number">19+</div><div class="stat-label">Years Experience</div></div><div class="stat"><div class="stat-number">$45M+</div><div class="stat-label">Programs Delivered</div></div><div class="stat"><div class="stat-number">120+</div><div class="stat-label">Team Size Led</div></div></div><div class="cta-buttons"><a href="#contact" class="btn btn-primary">Get in Touch</a><a href="#projects" class="btn btn-secondary">View Projects</a></div></div><div class="hero-visual"><div class="hero-cards"><div class="floating-card card-1"><div class="card-icon">🎓</div><h4>UT Austin AI/ML</h4><p>McCombs School of Business</p></div><div class="floating-card card-2"><div class="card-icon">🏆</div><h4>Technology All Star</h4><p>Data Modernization Platform</p></div><div class="floating-card card-3"><div class="card-icon">🤖</div><h4>Claude + Bedrock</h4><p>Anthropic Certified</p></div></div></div></div></div></section>
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Saravanan Kuppan</h1>
+                    <p class="tagline">Senior Technical Program Manager | Data & AI Platforms</p>
+                    <p>Technical Program Manager with 19+ years in financial services, specializing in building highly scalable data platforms and AI-powered solutions within regulated banking environments. Passionate about solving complex technical challenges and enabling engineering excellence.</p>
+                    <div class="hero-stats">
+                        <div class="stat"><div class="stat-number">19+</div><div class="stat-label">Years Experience</div></div>
+                        <div class="stat"><div class="stat-number">$45M+</div><div class="stat-label">Programs Delivered</div></div>
+                        <div class="stat"><div class="stat-number">120+</div><div class="stat-label">Team Size Led</div></div>
+                    </div>
+                    <div class="cta-buttons">
+                        <a href="#contact" class="btn btn-primary">Get in Touch</a>
+                        <a href="#projects" class="btn btn-secondary">View Projects</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="floating-card">
+                        <div class="card-icon">🎓</div>
+                        <div class="card-content">
+                            <h4>UT Austin AI/ML</h4>
+                            <p>McCombs School of Business</p>
+                        </div>
+                    </div>
+                    <div class="floating-card">
+                        <div class="card-icon">🏆</div>
+                        <div class="card-content">
+                            <h4>Technology All Star</h4>
+                            <p>Data Modernization Platform</p>
+                        </div>
+                    </div>
+                    <div class="floating-card">
+                        <div class="card-icon">🤖</div>
+                        <div class="card-content">
+                            <h4>Claude + Bedrock</h4>
+                            <p>Anthropic Certified</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section id="experience"><div class="container"><div class="section-header"><h2>Professional Journey</h2><p>Building scalable platforms and leading transformational programs across financial services</p></div><div class="timeline"><div class="timeline-item"><div class="timeline-content"><span class="timeline-date">Oct 2024 – Present</span><h3 class="timeline-title">Sr. Technical Program Manager — AI Initiatives</h3><div class="timeline-company">Texas Capital Bank</div><p class="timeline-description">Leading AI-driven Loan Onboarding Automation with AWS Bedrock and architecting Ranger Chat enterprise conversational AI platform with custom RAG pipelines and document intelligence.</p></div></div><div class="timeline-item"><div class="timeline-content"><span class="timeline-date">Jan 2023 – Sep 2024</span><h3 class="timeline-title">Sr. Technical Program Manager — Data Modernization</h3><div class="timeline-company">Texas Capital Bank</div><p class="timeline-description">Owned end-to-end technical vision for enterprise Data Modernization—building decentralized data domains using Snowflake, Airflow, AWS Glue, and Coalesce with shift-left governance. Technology All Star Award.</p></div></div><div class="timeline-item"><div class="timeline-content"><span class="timeline-date">Jul 2017 – Dec 2022</span><h3 class="timeline-title">Senior Manager / Lead Program Manager</h3><div class="timeline-company">USAA Bank (Tata Consultancy Services)</div><p class="timeline-description">Delivered $15M compliance program across 200+ applications. Managed 120-person cross-functional team across 4 global locations. Won Special Initiative Award and Best Team Award.</p></div></div><div class="timeline-item"><div class="timeline-content"><span class="timeline-date">Jul 2012 – Jun 2017</span><h3 class="timeline-title">Technical Program Manager</h3><div class="timeline-company">USAA Bank (Tata Consultancy Services)</div><p class="timeline-description">Strategic direction and governance for $20M core banking infrastructure portfolio. Technology Excellence Award recipient.</p></div></div><div class="timeline-item"><div class="timeline-content"><span class="timeline-date">Sep 2002 – Jun 2012</span><h3 class="timeline-title">Project Manager / Lead Software Engineer</h3><div class="timeline-company">USAA Bank (TCS) | San Antonio & Chennai</div><p class="timeline-description">Progressive growth from Software Engineer to Project Manager. Designed architecture frameworks for core banking interface systems.</p></div></div></div></div></section>
 
