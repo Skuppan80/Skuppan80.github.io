@@ -16,7 +16,6 @@
             --accent: #2563EB; 
             --accent-light: #60A5FA; 
             --white: #ffffff;
-            --glass: rgba(255, 255, 255, 0.8);
             --border: rgba(226, 232, 240, 0.8);
         }
         
@@ -26,262 +25,196 @@
         
         .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
         
-        /* SLEEK NAVIGATION */
         nav { 
             position: fixed; top: 0; width: 100%; 
-            background: var(--glass); 
+            background: rgba(255, 255, 255, 0.8); 
             backdrop-filter: blur(12px); 
-            -webkit-backdrop-filter: blur(12px);
             z-index: 1000; 
             border-bottom: 1px solid var(--border); 
         }
         nav .container { display: flex; justify-content: space-between; align-items: center; padding: 16px 24px; }
-        .logo { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; color: var(--navy); text-decoration: none; letter-spacing: -0.5px; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; color: var(--navy); text-decoration: none; }
         .nav-links { display: flex; gap: 32px; list-style: none; }
-        .nav-links a { text-decoration: none; color: var(--gray); font-size: 0.85rem; font-weight: 500; transition: all 0.3s; }
+        .nav-links a { text-decoration: none; color: var(--gray); font-size: 0.85rem; font-weight: 500; transition: 0.3s; }
         .nav-links a:hover { color: var(--accent); }
 
-        /* HERO SECTION */
         .hero { 
-            min-height: 90vh; display: flex; align-items: center; 
+            min-height: 80vh; display: flex; align-items: center; 
             background: radial-gradient(circle at top right, #F1F5F9 0%, var(--white) 100%);
-            padding-top: 100px; position: relative; 
+            padding-top: 100px; 
         }
-        .hero-content { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 80px; align-items: center; }
-        .hero-text h1 { font-family: 'Playfair Display', serif; font-size: 4rem; color: var(--navy); margin-bottom: 16px; line-height: 1.1; letter-spacing: -1px; }
+        .hero-content { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 60px; align-items: center; }
+        .hero-text h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; color: var(--navy); margin-bottom: 16px; line-height: 1.1; }
         .hero-text .tagline { font-size: 1.1rem; color: var(--accent); font-weight: 600; margin-bottom: 24px; text-transform: uppercase; letter-spacing: 2px; }
-        .hero-text p { font-size: 1.1rem; color: var(--gray); margin-bottom: 40px; max-width: 600px; }
         
         .hero-stats { display: flex; gap: 48px; margin-bottom: 40px; }
         .stat-number { font-size: 2rem; font-weight: 700; color: var(--navy); display: block; }
-        .stat-label { font-size: 0.7rem; color: var(--gray); text-transform: uppercase; letter-spacing: 1.5px; margin-top: 4px; font-weight: 600; }
+        .stat-label { font-size: 0.7rem; color: var(--gray); text-transform: uppercase; letter-spacing: 1.5px; font-weight: 600; }
 
-        .btn { 
-            display: inline-block; padding: 14px 32px; border-radius: 8px; 
-            font-weight: 600; text-decoration: none; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
-            font-size: 0.9rem; 
-        }
-        .btn-primary { background: var(--navy); color: var(--white); border: 1px solid var(--navy); }
-        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 24px rgba(15, 23, 42, 0.15); background: var(--accent); border-color: var(--accent); }
-        .btn-secondary { background: transparent; color: var(--navy); border: 1.5px solid var(--navy); margin-left: 12px; }
-        .btn-secondary:hover { background: var(--light-gray); transform: translateY(-3px); }
+        .btn { display: inline-block; padding: 14px 32px; border-radius: 8px; font-weight: 600; text-decoration: none; transition: 0.4s; font-size: 0.9rem; }
+        .btn-primary { background: var(--navy); color: var(--white); }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(15, 23, 42, 0.15); }
 
-        /* FLOATING CARDS EDGE */
-        .hero-visual { position: relative; display: flex; flex-direction: column; gap: 24px; }
-        .floating-card { 
-            background: var(--white); padding: 20px; border-radius: 12px; 
-            box-shadow: 0 4px 20px rgba(0,0,0,0.04); border: 1px solid var(--border);
-            display: flex; align-items: center; gap: 16px; width: 300px;
-            transition: all 0.3s ease;
-        }
-        .floating-card:hover { transform: scale(1.02) translateX(10px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
-        .card-icon { width: 44px; height: 44px; background: var(--light-gray); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
-        .card-content h4 { font-size: 0.9rem; color: var(--navy); margin-bottom: 2px; }
-        .card-content p { font-size: 0.75rem; color: var(--gray); margin: 0; }
+        section { padding: 100px 0; border-bottom: 1px solid var(--border); }
+        .section-header { margin-bottom: 50px; }
+        .section-header h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--navy); margin-bottom: 10px; }
 
-        /* SECTIONS */
-        section { padding: 120px 0; }
-        .section-header { margin-bottom: 60px; }
-        .section-header h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--navy); margin-bottom: 12px; }
-        .section-header p { color: var(--gray); font-size: 1rem; }
+        .experience-item { margin-bottom: 60px; }
+        .exp-meta { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
+        .exp-title { font-size: 1.4rem; font-weight: 700; color: var(--navy); }
+        .exp-date { font-weight: 600; color: var(--accent); font-size: 0.9rem; }
+        .exp-company { font-weight: 600; color: var(--charcoal); margin-bottom: 16px; }
+        ul { padding-left: 20px; list-style-type: none; }
+        ul li { position: relative; margin-bottom: 12px; color: var(--gray); font-size: 0.95rem; }
+        ul li::before { content: "▸"; position: absolute; left: -20px; color: var(--accent); }
 
-        /* PROJECT CARDS */
-        .projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
-        .project-card { 
-            border: 1px solid var(--border); border-radius: 16px; transition: all 0.4s ease; background: var(--white);
-            display: flex; flex-direction: column;
-        }
-        .project-card:hover { border-color: var(--accent-light); box-shadow: 0 20px 40px rgba(0,0,0,0.05); transform: translateY(-5px); }
-        .project-header { padding: 32px; border-bottom: 1px solid var(--border); }
-        .project-icon { font-size: 2rem; margin-bottom: 16px; display: block; }
-        .project-body { padding: 32px; flex-grow: 1; }
-        .tech-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
-        .tech-tag { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; color: var(--accent); background: #EFF6FF; padding: 4px 12px; border-radius: 4px; }
+        .tech-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
+        .tech-category h4 { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; color: var(--navy); margin-bottom: 12px; }
+        .tech-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+        .tech-tag { font-size: 0.75rem; background: var(--light-gray); padding: 4px 12px; border-radius: 4px; border: 1px solid var(--border); }
 
-        /* TIMELINE */
-        .timeline-item { border-left: 2px solid var(--border); padding-left: 32px; position: relative; margin-bottom: 48px; }
-        .timeline-item::before { content: ''; position: absolute; left: -7px; top: 0; width: 12px; height: 12px; border-radius: 50%; background: var(--accent); border: 2px solid var(--white); }
-        .timeline-date { font-size: 0.85rem; font-weight: 700; color: var(--accent); margin-bottom: 4px; display: block; }
-        .timeline-title { font-size: 1.25rem; color: var(--navy); margin-bottom: 4px; }
-        .timeline-company { font-weight: 600; margin-bottom: 12px; color: var(--charcoal); }
-
-        /* CERTIFICATIONS GRID */
-        .cert-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
-        .cert-card { padding: 24px; border: 1px solid var(--border); border-radius: 12px; display: flex; align-items: center; gap: 20px; transition: all 0.3s; }
+        .cert-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; }
+        .cert-card { padding: 24px; border: 1px solid var(--border); border-radius: 12px; transition: 0.3s; }
         .cert-card:hover { border-color: var(--accent); background: var(--light-gray); }
-        .cert-info h4 { font-size: 1rem; color: var(--navy); }
-        .cert-info p { font-size: 0.8rem; color: var(--gray); }
 
-        /* CONTACT SECTION */
-        #contact { background: var(--navy); color: var(--white); border-radius: 24px; margin: 0 24px 80px; padding: 80px 40px; text-align: center; }
-        #contact h2 { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 24px; }
-        .contact-links { display: flex; justify-content: center; gap: 24px; margin-top: 40px; flex-wrap: wrap; }
-        .contact-link { 
-            color: var(--white); text-decoration: none; border: 1px solid rgba(255,255,255,0.2); 
-            padding: 12px 24px; border-radius: 8px; transition: all 0.3s; display: flex; align-items: center; gap: 10px;
-        }
-        .contact-link:hover { background: var(--white); color: var(--navy); border-color: var(--white); }
+        #contact { background: var(--navy); color: var(--white); padding: 80px 40px; text-align: center; border-radius: 20px; margin-bottom: 60px; }
+        .contact-links { display: flex; justify-content: center; gap: 20px; margin-top: 30px; flex-wrap: wrap; }
+        .contact-link { color: var(--white); text-decoration: none; border: 1px solid rgba(255,255,255,0.2); padding: 10px 20px; border-radius: 6px; font-size: 0.85rem; }
+        .contact-link:hover { background: var(--white); color: var(--navy); }
 
-        footer { text-align: center; padding-bottom: 40px; color: var(--gray); font-size: 0.85rem; }
-
-        @media (max-width: 900px) {
-            .hero-content, .projects-grid { grid-template-columns: 1fr; }
-            .hero-text h1 { font-size: 3rem; }
-            .hero-visual { align-items: center; }
-        }
+        @media (max-width: 900px) { .hero-content, .tech-grid { grid-template-columns: 1fr; } .exp-meta { flex-direction: column; } }
     </style>
 </head>
 <body>
-    <nav>
-        <div class="container">
-            <a href="#" class="logo">SK.</a>
-            <ul class="nav-links">
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#certifications">Certifications</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+    <nav><div class="container"><a href="#" class="logo">SK.</a><ul class="nav-links"><li><a href="#summary">Summary</a></li><li><a href="#experience">Experience</a></li><li><a href="#skills">Expertise</a></li><li><a href="#certifications">Certifications</a></li></ul></div></nav>
 
-    <section class="hero" id="home">
+    <section class="hero">
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <p class="tagline">Scale • Innovate • Deliver</p>
+                    <p class="tagline">Vision • Strategy • Execution</p>
                     <h1>Saravanan Kuppan</h1>
-                    <p>Senior Manager, Technical Program Management specializing in AI & Data Platforms. Delivering enterprise-grade solutions for complex financial environments.</p>
+                    <p>Senior Manager, Technical Program Management specializing in AI & Data Platforms. Driving engineering excellence and scalable transformation in financial services.</p>
                     <div class="hero-stats">
                         <div class="stat"><span class="stat-number">19+</span><span class="stat-label">Years Exp</span></div>
-                        <div class="stat"><span class="stat-number">$45M+</span><span class="stat-label">Programs</span></div>
                         <div class="stat"><span class="stat-number">120+</span><span class="stat-label">Global Team</span></div>
+                        <div class="stat"><span class="stat-number">$45M+</span><span class="stat-label">Delivered</span></div>
                     </div>
-                    <div class="cta-buttons">
-                        <a href="#contact" class="btn btn-primary">Connect Now</a>
-                        <a href="#projects" class="btn btn-secondary">View Strategy</a>
-                    </div>
-                </div>
-                <div class="hero-visual">
-                    <div class="floating-card" style="margin-left: 40px;">
-                        <div class="card-icon">🎓</div>
-                        <div class="card-content"><h4>Duke University</h4><p>ML Foundations for PMs</p></div>
-                    </div>
-                    <div class="floating-card">
-                        <div class="card-icon">🤖</div>
-                        <div class="card-content"><h4>AI Platforms</h4><p>AWS Bedrock & RAG Architecture</p></div>
-                    </div>
-                    <div class="floating-card" style="margin-left: 20px;">
-                        <div class="card-icon">❄️</div>
-                        <div class="card-content"><h4>Data Modernization</h4><p>Snowflake & Governance</p></div>
-                    </div>
+                    <a href="#contact" class="btn btn-primary">Let's Connect</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="experience">
-        <div class="container">
-            <div class="section-header"><h2>Professional Trajectory</h2><p>Leading high-impact technology transformation in banking.</p></div>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <span class="timeline-date">Oct 2024 – Present</span>
-                    <h3 class="timeline-title">Senior Technical Program Manager — AI Initiatives</h3>
-                    <div class="timeline-company">Texas Capital Bank</div>
-                    <p>Architecting enterprise AI conversational platforms and loan automation using AWS Bedrock and custom RAG pipelines.</p>
-                </div>
-                <div class="timeline-item">
-                    <span class="timeline-date">Jan 2023 – Sep 2024</span>
-                    <h3 class="timeline-title">Senior Technical Program Manager — Data Modernization</h3>
-                    <div class="timeline-company">Texas Capital Bank</div>
-                    <p>Designed scalable data domains and shift-left governance frameworks using Snowflake and AWS Glue.</p>
-                </div>
-                <div class="timeline-item">
-                    <span class="timeline-date">Jul 2017 – Dec 2022</span>
-                    <h3 class="timeline-title">Senior Manager / Lead Program Manager</h3>
-                    <div class="timeline-company">USAA Bank (TCS)</div>
-                    <p>Managed a $15M compliance portfolio and led a 120-person global team across four locations.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <section id="summary"><div class="container">
+        <div class="section-header"><h2>Executive Summary</h2></div>
+        [cite_start]<p>Technical Program Manager with 19+ years in financial services, specializing in building highly scalable data platforms and AI-powered solutions within regulated banking environments[cite: 5]. [cite_start]Proven ability to drive large, complex programs from vision to delivery—managing cross-functional teams of 120+ across global locations while maintaining zero-tolerance for technical debt[cite: 6]. [cite_start]Deep expertise in AWS cloud architecture, distributed systems, and Agile delivery[cite: 7].</p>
+    </div></section>
 
-    <section id="projects">
-        <div class="container">
-            <div class="section-header"><h2>Core Initiatives</h2></div>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-header">
-                        <span class="project-icon">🧠</span>
-                        <h3>Loan Onboarding AI</h3>
-                    </div>
-                    <div class="project-body">
-                        <p>Leveraging LLMs to extract and validate 10k+ document fields with Human-in-the-Loop oversight.</p>
-                        <div class="tech-tags"><span class="tech-tag">AWS Bedrock</span><span class="tech-tag">HITL</span><span class="tech-tag">Python</span></div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-header">
-                        <span class="project-icon">🏛️</span>
-                        <h3>Data Governance 2.0</h3>
-                    </div>
-                    <div class="project-body">
-                        <p>Implementing enterprise metadata definitions and shift-left governance across decentralized data domains.</p>
-                        <div class="tech-tags"><span class="tech-tag">Snowflake</span><span class="tech-tag">Collibra</span><span class="tech-tag">Airflow</span></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <section id="experience"><div class="container">
+        <div class="section-header"><h2>Professional Experience</h2></div>
 
-    <section id="certifications">
-        <div class="container">
-            <div class="section-header"><h2>Credentials</h2></div>
-            <div class="cert-grid">
-                <div class="cert-card">
-                    <div class="card-icon">📘</div>
-                    <div class="cert-info"><h4>ML Foundations for Product Managers</h4><p>Duke University • 2025</p></div>
-                </div>
-                <div class="cert-card">
-                    <div class="card-icon">📙</div>
-                    <div class="cert-info"><h4>PG in AI & Machine Learning</h4><p>UT Austin McCombs • 2025</p></div>
-                </div>
-                <div class="cert-card">
-                    <div class="card-icon">☁️</div>
-                    <div class="cert-info"><h4>Claude + Bedrock</h4><p>Anthropic • 2025</p></div>
-                </div>
-                <div class="cert-card">
-                    <div class="card-icon">🛡️</div>
-                    <div class="cert-info"><h4>AI Security & Governance</h4><p>Securiti • 2024</p></div>
-                </div>
-            </div>
+        <div class="experience-item">
+            <div class="exp-meta"><span class="exp-title">Senior Technical Program Manager — AI Initiatives</span><span class="exp-date">Oct 2024 – Present</span></div>
+            <div class="exp-company">Texas Capital Bank | San Antonio, TX</div>
+            <ul>
+                [cite_start]<li>Leading AI-driven Loan Onboarding Automation platform leveraging AWS Bedrock and Knowledge Bases to extract and validate 10,000+ document fields with Human-in-the-Loop review[cite: 19].</li>
+                [cite_start]<li>Architecting Ranger Chat—an enterprise-grade conversational AI platform with custom RAG pipelines and extensible agent architecture[cite: 20].</li>
+                [cite_start]<li>Proactively identifying and mitigating technical risks across AI delivery lifecycle; established governance frameworks aligned with enterprise risk management[cite: 21].</li>
+                [cite_start]<li>Driving quantitative decision-making across Product, Engineering, Design, and Data Science teams to prioritize high-impact automation opportunities[cite: 22].</li>
+            </ul>
         </div>
-    </section>
 
-    <div id="contact" class="container">
-        <h2>Let's Build the Future.</h2>
-        <p>Currently open to strategic discussions regarding AI leadership and data platform innovation.</p>
+        <div class="experience-item">
+            <div class="exp-meta"><span class="exp-title">Senior Technical Program Manager — Data Modernization</span><span class="exp-date">Jan 2023 – Sep 2024</span></div>
+            <div class="exp-company">Texas Capital Bank | San Antonio, TX</div>
+            <ul>
+                [cite_start]<li>Owned technical vision and delivery for enterprise Data Modernization program—building decentralized, scalable data domains for Deposits, Lending, Finance, Treasury, and AUM[cite: 25].</li>
+                [cite_start]<li>Designed highly available, distributed data platform using Snowflake, Airflow, AWS Glue, and Coalesce[cite: 26].</li>
+                [cite_start]<li>Implemented shift-left governance with Collibra for metadata management[cite: 27].</li>
+                [cite_start]<li>Secured cross-functional commitments to land enterprise-level metadata definitions and quality rules[cite: 28].</li>
+                [cite_start]<li>Recognized with Technology All Star Award for successfully delivering the enterprise Data Modernization platform[cite: 30].</li>
+            </ul>
+        </div>
+
+        <div class="experience-item">
+            <div class="exp-meta"><span class="exp-title">Senior Manager / Lead Program Manager</span><span class="exp-date">Jul 2017 – Dec 2022</span></div>
+            <div class="exp-company">USAA Bank (Tata Consultancy Services) | San Antonio, TX</div>
+            <ul>
+                [cite_start]<li>Delivered $15M compliance program identifying controls gaps across 200+ applications with 8+ agile teams under OCC regulatory mandate[cite: 33].</li>
+                <li><strong>Snowflake Implementation:</strong> Led migration from Netezza to Snowflake; managed vendor file ingestion and application redesign utilizing Snowflake streams and tasks to optimize performance.</li>
+                <li><strong>General Purpose DataMart (GPM):</strong> Architected ELT framework using DataStage and Netezza to create a single source of truth for Core Banking products.</li>
+                <li><strong>Bank Credit Card Servicing:</strong> Modernized legacy servicing systems to internal cloud architecture; directed an 8-member agile team to design and implement collateral and customer APIs.</li>
+                [cite_start]<li>Conceptualized and implemented automation framework for business application controls, achieving 35% full automation within 18 months[cite: 34].</li>
+                [cite_start]<li>Managed cross-functional team of 120 across 4 global locations (Texas, Mexico, Chennai, Hyderabad)[cite: 35].</li>
+                [cite_start]<li>Executed service account migration program—3,000+ accounts migrated with zero production incidents[cite: 36].</li>
+                [cite_start]<li>Collaborated with CIO to optimize IT governance; awarded Special Initiative and Best Team awards[cite: 37].</li>
+            </ul>
+        </div>
+
+        <div class="experience-item">
+            <div class="exp-meta"><span class="exp-title">Technical Program Manager</span><span class="exp-date">Jul 2012 – Jun 2017</span></div>
+            <div class="exp-company">USAA Bank (Tata Consultancy Services) | San Antonio, TX</div>
+            <ul>
+                [cite_start]<li>Provided strategic direction and governance for $20M core banking infrastructure portfolio[cite: 40].</li>
+                [cite_start]<li>Conducted impact assessments and coordinated with stakeholders to implement deliverables within highly regulated environment[cite: 41].</li>
+                [cite_start]<li>Awarded Technology Excellence Award (2014) for core banking platform upgrade contribution[cite: 42].</li>
+            </ul>
+        </div>
+
+        <div class="experience-item">
+            <div class="exp-meta"><span class="exp-title">Project Manager / Lead Software Engineer</span><span class="exp-date">Sep 2002 – Jun 2012</span></div>
+            <div class="exp-company">USAA Bank (Tata Consultancy Services) | San Antonio & Chennai</div>
+            <ul>
+                [cite_start]<li>Designed architecture frameworks for core banking interface systems; served as Technical SME for banking and credit card infrastructure[cite: 45].</li>
+                [cite_start]<li>Progressive career growth from Software Engineer to Project Manager—building technical foundation in distributed systems[cite: 46].</li>
+            </ul>
+        </div>
+
+    </div></section>
+
+    <section id="skills"><div class="container">
+        <div class="section-header"><h2>Technical Expertise</h2></div>
+        <div class="tech-grid">
+            <div class="tech-category"><h4>Cloud & Data</h4><div class="tech-tags">
+                <span class="tech-tag">AWS (Bedrock, Glue, SageMaker)</span><span class="tech-tag">Snowflake</span><span class="tech-tag">Airflow</span><span class="tech-tag">Coalesce</span><span class="tech-tag">Collibra</span><span class="tech-tag">DBT</span><span class="tech-tag">DataStage</span><span class="tech-tag">Netezza</span>
+            </div></div>
+            <div class="tech-category"><h4>AI/ML & Analytics</h4><div class="tech-tags">
+                <span class="tech-tag">RAG Pipelines</span><span class="tech-tag">LLM Integration</span><span class="tech-tag">Document Intelligence</span><span class="tech-tag">HITL Systems</span><span class="tech-tag">Conversational AI</span>
+            </div></div>
+            <div class="tech-category"><h4>Architecture</h4><div class="tech-tags">
+                <span class="tech-tag">Microservices</span><span class="tech-tag">Distributed Computing</span><span class="tech-tag">APIs</span><span class="tech-tag">Event-Driven Systems</span><span class="tech-tag">ELT/ETL Frameworks</span>
+            </div></div>
+            <div class="tech-category"><h4>Management</h4><div class="tech-tags">
+                <span class="tech-tag">SAFe Agile</span><span class="tech-tag">Scrum</span><span class="tech-tag">Technical Risk Mitigation</span><span class="tech-tag">Regulatory Compliance</span>
+            </div></div>
+        </div>
+    </div></section>
+
+    <section id="certifications"><div class="container">
+        <div class="section-header"><h2>Education & Certifications</h2></div>
+        <div class="cert-grid">
+            <div class="cert-card"><h4>ML Foundations for Product Managers</h4><p>Duke University | 2025</p></div>
+            <div class="cert-card"><h4>PG Program in AI & Machine Learning</h4><p>UT Austin McCombs | [cite_start]2025 [cite: 49]</p></div>
+            <div class="cert-card"><h4>Bachelor of Computer Science & Engineering</h4><p>Anna University | [cite_start]2002 [cite: 51]</p></div>
+            <div class="cert-card"><h4>Claude with Amazon Bedrock</h4><p>Anthropic | [cite_start]2025 [cite: 53]</p></div>
+            <div class="cert-card"><h4>AI Security & Governance</h4><p>Securiti | [cite_start]2024 [cite: 54]</p></div>
+            [cite_start]<div class="cert-card"><h4>TCS Certified Digital Leader</h4><p>Tata Consultancy Services [cite: 55]</p></div>
+        </div>
+    </div></section>
+
+    <div class="container"><div id="contact">
+        <h2>Connect With Me</h2>
         <div class="contact-links">
-            <a href="mailto:saravanan.kuppan@gmail.com" class="contact-link">📧 Email Me</a>
-            <a href="https://www.linkedin.com/in/saravanan-kuppan-146b3419" target="_blank" class="contact-link">💼 LinkedIn</a>
-            <a href="https://github.com/skuppan80" target="_blank" class="contact-link">💻 GitHub</a>
-            <a href="https://anozofai.substack.com" target="_blank" class="contact-link">📝 Substack</a>
+            <a href="mailto:saravanan.kuppan@gmail.com" class="contact-link">Email</a>
+            <a href="https://www.linkedin.com/in/saravanan-kuppan-146b3419" target="_blank" class="contact-link">LinkedIn</a>
+            <a href="https://github.com/skuppan80" target="_blank" class="contact-link">GitHub</a>
+            <a href="https://anozofai.substack.com" target="_blank" class="contact-link">Substack</a>
         </div>
-    </div>
+    </div></div>
 
-    <footer><p>© 2026 Saravanan Kuppan • Built for Performance.</p></footer>
-
-    <script>
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.style.opacity = '1', entry.target.style.transform = 'translateY(0)';
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.timeline-item, .project-card, .cert-card, .floating-card').forEach(el => {
-            el.style.opacity = '0'; el.style.transform = 'translateY(20px)';
-            el.style.transition = 'all 0.6s ease-out';
-            observer.observe(el);
-        });
-    </script>
+    <footer><div class="container" style="text-align: center; color: var(--gray); font-size: 0.8rem; padding-bottom: 40px;">
+        © 2026 Saravanan Kuppan • Senior Manager, AI & Data Platforms
+    </div></footer>
 </body>
 </html>
