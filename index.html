@@ -4,298 +4,637 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Saravanan Kuppan | Director, Technical Program Management</title>
+    <meta name="description" content="Director-level Technical Program Manager specializing in Card Servicing Platforms, AI, and Data Solutions in Financial Services.">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #003366; /* Dark Blue */
-            --accent-color: #0056b3; /* Lighter Blue */
-            --text-color: #333;
-            --bg-color: #f4f7f6;
-            --section-bg: #ffffff;
+            --navy: #0F2B46;
+            --navy-mid: #1A3D5C;
+            --slate: #334155;
+            --gray: #64748B;
+            --light: #F1F5F9;
+            --lighter: #F8FAFC;
+            --white: #FFFFFF;
+            --accent: #2563EB;
+            --accent-light: #3B82F6;
+            --gold: #D97706;
+            --gold-light: #F59E0B;
+            --teal: #0D9488;
+            --border: #E2E8F0;
         }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--bg-color);
-            margin: 0;
-            padding: 0;
+            font-family: 'DM Sans', sans-serif;
+            color: var(--slate);
+            line-height: 1.7;
+            background: var(--white);
+            -webkit-font-smoothing: antialiased;
         }
 
-        .container {
-            max-width: 900px;
-            margin: 40px auto;
-            background: var(--section-bg);
-            padding: 40px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            border-radius: 8px;
+        .container { max-width: 1140px; margin: 0 auto; padding: 0 28px; }
+
+        /* ── Navigation ── */
+        nav {
+            position: fixed; top: 0; width: 100%; z-index: 100;
+            background: rgba(15,43,70,0.97); backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+        nav .container {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 14px 28px;
+        }
+        .logo {
+            font-family: 'Instrument Serif', serif; font-size: 1.4rem;
+            color: var(--white); text-decoration: none; letter-spacing: -0.02em;
+        }
+        .nav-links { display: flex; gap: 28px; list-style: none; }
+        .nav-links a {
+            text-decoration: none; color: rgba(255,255,255,0.7);
+            font-size: 0.85rem; font-weight: 500; transition: color 0.3s;
+            letter-spacing: 0.02em;
+        }
+        .nav-links a:hover { color: var(--white); }
+
+        /* ── Hero ── */
+        .hero {
+            min-height: 100vh; display: flex; align-items: center;
+            background: linear-gradient(170deg, var(--navy) 0%, var(--navy-mid) 45%, #1E4D6E 100%);
+            padding-top: 80px; position: relative; overflow: hidden;
+        }
+        .hero::before {
+            content: ''; position: absolute; top: -30%; right: -15%;
+            width: 700px; height: 700px; border-radius: 50%;
+            background: radial-gradient(circle, rgba(37,99,235,0.12) 0%, transparent 70%);
+        }
+        .hero::after {
+            content: ''; position: absolute; bottom: -20%; left: -10%;
+            width: 500px; height: 500px; border-radius: 50%;
+            background: radial-gradient(circle, rgba(217,119,6,0.08) 0%, transparent 70%);
+        }
+        .hero-content {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
+            align-items: center; position: relative; z-index: 1;
+        }
+        .hero-text h1 {
+            font-family: 'Instrument Serif', serif; font-size: 3.2rem;
+            color: var(--white); margin-bottom: 8px; line-height: 1.1;
+            letter-spacing: -0.03em;
+        }
+        .hero-tagline {
+            font-size: 1.15rem; color: var(--gold-light);
+            font-weight: 500; margin-bottom: 24px; letter-spacing: 0.01em;
+        }
+        .hero-desc {
+            font-size: 1rem; color: rgba(255,255,255,0.75);
+            margin-bottom: 36px; line-height: 1.85; max-width: 520px;
+        }
+        .hero-stats { display: flex; gap: 40px; margin-bottom: 36px; }
+        .stat { text-align: left; }
+        .stat-number {
+            font-family: 'Instrument Serif', serif; font-size: 2.6rem;
+            color: var(--white); line-height: 1;
+        }
+        .stat-label {
+            font-size: 0.72rem; color: rgba(255,255,255,0.55);
+            text-transform: uppercase; letter-spacing: 1.8px; margin-top: 6px;
+        }
+        .hero-links { display: flex; gap: 14px; flex-wrap: wrap; }
+        .hero-links a {
+            display: inline-flex; align-items: center; gap: 6px;
+            padding: 10px 18px; border-radius: 8px; text-decoration: none;
+            font-size: 0.85rem; font-weight: 500; transition: all 0.3s;
+        }
+        .btn-primary {
+            background: var(--accent); color: var(--white);
+            border: 1px solid var(--accent);
+        }
+        .btn-primary:hover { background: var(--accent-light); }
+        .btn-outline {
+            background: transparent; color: var(--white);
+            border: 1px solid rgba(255,255,255,0.25);
+        }
+        .btn-outline:hover { border-color: rgba(255,255,255,0.5); background: rgba(255,255,255,0.05); }
+
+        .hero-right {
+            display: flex; flex-direction: column; gap: 16px;
+        }
+        .highlight-card {
+            background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px; padding: 20px 24px;
+            backdrop-filter: blur(8px); transition: transform 0.3s, background 0.3s;
+        }
+        .highlight-card:hover { transform: translateY(-2px); background: rgba(255,255,255,0.09); }
+        .highlight-card h3 {
+            font-size: 0.95rem; color: var(--white); margin-bottom: 6px;
+            display: flex; align-items: center; gap: 8px;
+        }
+        .highlight-card p { font-size: 0.82rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
+        .card-icon { font-size: 1.1rem; }
+
+        /* ── Sections ── */
+        section { padding: 80px 0; }
+        .section-header {
+            margin-bottom: 48px;
+        }
+        .section-header h2 {
+            font-family: 'Instrument Serif', serif; font-size: 2.2rem;
+            color: var(--navy); margin-bottom: 8px; letter-spacing: -0.02em;
+        }
+        .section-header p {
+            font-size: 0.95rem; color: var(--gray); max-width: 560px;
+        }
+        .section-label {
+            font-size: 0.72rem; text-transform: uppercase; letter-spacing: 2.5px;
+            color: var(--accent); font-weight: 600; margin-bottom: 8px;
         }
 
-        /* Header */
-        header {
-            text-align: center;
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 20px;
-            margin-bottom: 30px;
+        /* ── Experience Timeline ── */
+        #experience { background: var(--lighter); }
+        .timeline { position: relative; }
+        .timeline::before {
+            content: ''; position: absolute; left: 20px; top: 0; bottom: 0;
+            width: 2px; background: var(--border);
+        }
+        .timeline-item {
+            position: relative; padding-left: 56px; margin-bottom: 40px;
+            opacity: 0; transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        .timeline-item.visible { opacity: 1; transform: translateY(0); }
+        .timeline-dot {
+            position: absolute; left: 13px; top: 6px;
+            width: 16px; height: 16px; border-radius: 50%;
+            background: var(--accent); border: 3px solid var(--white);
+            box-shadow: 0 0 0 2px var(--accent);
+        }
+        .timeline-item.current .timeline-dot {
+            background: var(--gold); box-shadow: 0 0 0 2px var(--gold);
+        }
+        .timeline-dates {
+            font-size: 0.78rem; color: var(--gray); font-weight: 500;
+            letter-spacing: 0.04em; margin-bottom: 4px;
+        }
+        .timeline-title {
+            font-size: 1.15rem; font-weight: 700; color: var(--navy); margin-bottom: 2px;
+        }
+        .timeline-company {
+            font-size: 0.88rem; color: var(--accent); font-weight: 500; margin-bottom: 12px;
+        }
+        .timeline-bullets { list-style: none; }
+        .timeline-bullets li {
+            position: relative; padding-left: 18px; margin-bottom: 8px;
+            font-size: 0.88rem; color: var(--slate); line-height: 1.65;
+        }
+        .timeline-bullets li::before {
+            content: ''; position: absolute; left: 0; top: 9px;
+            width: 6px; height: 6px; border-radius: 50%; background: var(--border);
         }
 
-        h1 {
-            color: var(--primary-color);
-            margin: 0;
-            font-size: 2.5em;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+        /* ── Projects ── */
+        .projects-grid {
+            display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
+        }
+        .project-card {
+            background: var(--white); border: 1px solid var(--border);
+            border-radius: 12px; padding: 28px; transition: all 0.3s;
+            opacity: 0; transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.3s;
+        }
+        .project-card.visible { opacity: 1; transform: translateY(0); }
+        .project-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.06); border-color: var(--accent); }
+        .project-tag {
+            display: inline-block; padding: 3px 10px; border-radius: 20px;
+            font-size: 0.68rem; font-weight: 600; text-transform: uppercase;
+            letter-spacing: 1px; margin-bottom: 12px;
+        }
+        .tag-ai { background: #EFF6FF; color: var(--accent); }
+        .tag-data { background: #F0FDF4; color: #15803D; }
+        .tag-platform { background: #FDF4FF; color: #A21CAF; }
+        .tag-compliance { background: #FFFBEB; color: var(--gold); }
+        .project-card h3 { font-size: 1.05rem; color: var(--navy); margin-bottom: 8px; }
+        .project-card p { font-size: 0.85rem; color: var(--gray); line-height: 1.65; }
+        .project-metric {
+            margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--border);
+            font-size: 0.82rem; color: var(--slate); font-weight: 600;
         }
 
-        .subtitle {
-            font-size: 1.2em;
-            color: var(--accent-color);
-            font-weight: bold;
-            margin-top: 10px;
+        /* ── Articles / Thought Leadership ── */
+        #articles { background: var(--lighter); }
+        .articles-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
         }
+        .article-card {
+            background: var(--white); border: 1px solid var(--border);
+            border-radius: 10px; padding: 24px; transition: all 0.3s;
+            text-decoration: none; display: block;
+            opacity: 0; transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.3s, border-color 0.3s;
+        }
+        .article-card.visible { opacity: 1; transform: translateY(0); }
+        .article-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.06); border-color: var(--accent); }
+        .article-source {
+            font-size: 0.68rem; text-transform: uppercase; letter-spacing: 1.5px;
+            font-weight: 600; margin-bottom: 10px;
+        }
+        .source-substack { color: #FF6719; }
+        .source-linkedin { color: #0A66C2; }
+        .article-card h3 { font-size: 0.95rem; color: var(--navy); margin-bottom: 8px; line-height: 1.4; }
+        .article-card p { font-size: 0.82rem; color: var(--gray); line-height: 1.6; }
+        .article-date { font-size: 0.75rem; color: var(--gray); margin-top: 12px; }
 
-        .contact-info {
-            margin-top: 15px;
-            font-size: 0.95em;
+        /* ── Certifications ── */
+        .certs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .cert-card {
+            background: var(--white); border: 1px solid var(--border);
+            border-radius: 10px; padding: 24px; text-align: center;
+            transition: all 0.3s;
+            opacity: 0; transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.3s;
         }
+        .cert-card.visible { opacity: 1; transform: translateY(0); }
+        .cert-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.06); }
+        .cert-icon { font-size: 2rem; margin-bottom: 12px; }
+        .cert-card h3 { font-size: 0.92rem; color: var(--navy); margin-bottom: 4px; }
+        .cert-card p { font-size: 0.78rem; color: var(--gray); }
 
-        .contact-info a {
-            color: var(--text-color);
-            text-decoration: none;
-            margin: 0 10px;
-            font-weight: 500;
+        /* ── Education ── */
+        #education { background: var(--lighter); }
+        .edu-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+        .edu-card {
+            background: var(--white); border: 1px solid var(--border);
+            border-radius: 10px; padding: 28px;
         }
+        .edu-card h3 { font-size: 1rem; color: var(--navy); margin-bottom: 4px; }
+        .edu-card .edu-school { font-size: 0.88rem; color: var(--accent); font-weight: 500; margin-bottom: 4px; }
+        .edu-card .edu-date { font-size: 0.8rem; color: var(--gray); }
 
-        .contact-info a:hover {
-            color: var(--accent-color);
+        /* ── Contact ── */
+        #contact { background: var(--navy); color: var(--white); padding: 60px 0; }
+        #contact .section-header h2 { color: var(--white); }
+        #contact .section-header p { color: rgba(255,255,255,0.6); }
+        .contact-grid { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
+        .contact-link {
+            display: flex; align-items: center; gap: 8px;
+            padding: 12px 20px; border-radius: 8px;
+            background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12);
+            color: var(--white); text-decoration: none; font-size: 0.88rem;
+            transition: all 0.3s;
         }
+        .contact-link:hover { background: rgba(255,255,255,0.14); }
 
-        /* Sections */
-        section {
-            margin-bottom: 35px;
-        }
-
-        h2 {
-            color: var(--primary-color);
-            font-size: 1.4em;
-            border-left: 5px solid var(--accent-color);
-            padding-left: 10px;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-        }
-
-        /* Competencies Grid */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-            gap: 15px;
-        }
-
-        .skill-item {
-            background: #f8f9fa;
-            padding: 10px 15px;
-            border-left: 3px solid var(--accent-color);
-            font-size: 0.95em;
-        }
-
-        /* Experience */
-        .job {
-            margin-bottom: 25px;
-        }
-
-        .job-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 10px;
-            flex-wrap: wrap;
-        }
-
-        .job-title {
-            font-weight: bold;
-            font-size: 1.1em;
-            color: #000;
-        }
-
-        .company {
-            color: var(--primary-color);
-            font-weight: 600;
-        }
-
-        .dates {
-            font-style: italic;
-            color: #666;
-            white-space: nowrap;
-        }
-
-        ul {
-            padding-left: 20px;
-            margin-top: 5px;
-        }
-
-        li {
-            margin-bottom: 8px;
-        }
-
-        /* Technical Skills Table-ish layout */
-        .tech-category {
-            margin-bottom: 10px;
-        }
-        .tech-category strong {
-            color: var(--primary-color);
-            display: inline-block;
-            width: 140px;
-        }
-
-        /* Footer */
+        /* ── Footer ── */
         footer {
-            text-align: center;
-            font-size: 0.85em;
-            color: #777;
-            margin-top: 50px;
-            padding-top: 20px;
-            border-top: 1px solid #ddd;
+            background: var(--navy); border-top: 1px solid rgba(255,255,255,0.06);
+            padding: 20px 0; text-align: center;
         }
+        footer p { font-size: 0.78rem; color: rgba(255,255,255,0.4); }
 
-        @media (max-width: 600px) {
-            .container { padding: 20px; margin: 10px; }
-            .job-header { flex-direction: column; }
-            .dates { margin-top: 5px; }
-            .tech-category strong { display: block; width: 100%; margin-bottom: 5px; }
-            .skills-grid { grid-template-columns: 1fr; }
+        /* ── Responsive ── */
+        @media (max-width: 768px) {
+            .hero-content { grid-template-columns: 1fr; gap: 40px; }
+            .hero-text h1 { font-size: 2.4rem; }
+            .hero-stats { gap: 24px; }
+            .stat-number { font-size: 2rem; }
+            .projects-grid { grid-template-columns: 1fr; }
+            .articles-grid { grid-template-columns: 1fr; }
+            .certs-grid { grid-template-columns: 1fr; }
+            .edu-grid { grid-template-columns: 1fr; }
+            .nav-links { gap: 16px; }
+            .nav-links a { font-size: 0.78rem; }
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <header>
-        <h1>Saravanan Kuppan</h1>
-        <div class="subtitle">Director, Technical Program Management | Card Servicing Platforms & Data/AI Solutions</div>
-        <div class="contact-info">
-            <span>San Antonio, TX</span> |
-            <a href="mailto:saravanan.kuppan@gmail.com">saravanan.kuppan@gmail.com</a> |
-            <a href="https://linkedin.com/in/skuoppan">LinkedIn</a> |
-            <a href="https://github.com/Skuppan80">GitHub</a> |
-            <a href="#">Portfolio</a>
+    <nav>
+        <div class="container">
+            <a href="#" class="logo">SK</a>
+            <ul class="nav-links">
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#articles">Writing</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </div>
-    </header>
+    </nav>
 
-    <section id="summary">
-        <h2>Professional Summary</h2>
-        <p>
-            Director-level Technical Program Management leader with 15+ years delivering mission-critical Card Servicing platforms, data infrastructure, and AI solutions in highly regulated financial services. Proven track record managing $40M+ programs across distributed systems and cloud-native architectures (AWS) while leading cross-functional teams of 120+ across global locations. Expert in building TPM practices, simplifying technically complex decisions, and driving large-scale platform modernization. Deep expertise with Card Origination/Servicing systems, Core Banking, and enterprise data solutions—delivering measurable business impact through exceptional execution and stakeholder alignment.
-        </p>
+    <!-- ── HERO ── -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Saravanan Kuppan</h1>
+                    <p class="hero-tagline">Director, Technical Program Management | Card Servicing Platforms &amp; AI</p>
+                    <p class="hero-desc">
+                        Director-level TPM leader with 15+ years delivering mission-critical Card Servicing platforms, data infrastructure, and AI solutions in highly regulated financial services. Expert in building TPM practices, growing talent, and driving $40M+ platform modernization programs.
+                    </p>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <div class="stat-number">15+</div>
+                            <div class="stat-label">Years Leadership</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">$40M+</div>
+                            <div class="stat-label">Programs Delivered</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">120+</div>
+                            <div class="stat-label">Team Size</div>
+                        </div>
+                    </div>
+                    <div class="hero-links">
+                        <a href="https://www.linkedin.com/in/saravanan-kuppan-146b3419" target="_blank" class="btn-primary">LinkedIn</a>
+                        <a href="https://github.com/skuppan80" target="_blank" class="btn-outline">GitHub</a>
+                        <a href="https://anozofai.substack.com" target="_blank" class="btn-outline">Substack</a>
+                        <a href="mailto:saravanan.kuppan@gmail.com" class="btn-outline">Contact</a>
+                    </div>
+                </div>
+                <div class="hero-right">
+                    <div class="highlight-card">
+                        <h3><span class="card-icon">&#x1F916;</span> AI Platform Strategy</h3>
+                        <p>Leading 4 concurrent GenAI initiatives including Loan Onboarding Automation and Ranger Chat with Office 365 integration at Texas Capital Bank</p>
+                    </div>
+                    <div class="highlight-card">
+                        <h3><span class="card-icon">&#x1F4CA;</span> Data Modernization</h3>
+                        <p>Delivered enterprise data platform across 5 domains using Snowflake, Airflow, and AWS Glue processing 50+ source systems</p>
+                    </div>
+                    <div class="highlight-card">
+                        <h3><span class="card-icon">&#x1F3E6;</span> Card Servicing Platforms</h3>
+                        <p>Modernized credit card origination and servicing systems powering 2M+ active cardholders via cloud-native migration</p>
+                    </div>
+                    <div class="highlight-card">
+                        <h3><span class="card-icon">&#x1F6E1;</span> Regulatory Compliance</h3>
+                        <p>Delivered $15M OCC compliance program across 200+ applications achieving 35% automation of business controls</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section id="competencies">
-        <h2>Core Competencies</h2>
-        <div class="skills-grid">
-            <div class="skill-item">Scalable Platform & Data Architecture</div>
-            <div class="skill-item">AWS Cloud Services (Bedrock, Glue, SageMaker)</div>
-            <div class="skill-item">Distributed Systems & High Availability</div>
-            <div class="skill-item">Technical Risk Identification & Mitigation</div>
-            <div class="skill-item">Large-Scale Program Delivery ($40M+)</div>
-            <div class="skill-item">TPM Practice Development & Team Growth</div>
-            <div class="skill-item">SAFe Agile, Scrum & Kanban Delivery (9+ yrs)</div>
-            <div class="skill-item">Regulatory Compliance & IT Controls</div>
-        </div>
-    </section>
-
-    <section id="technical-skills">
-        <h2>Technical Expertise</h2>
-        <div class="tech-category">
-            <strong>Cloud & Data:</strong> AWS (Bedrock, Glue, SageMaker, Lambda, EC2, S3), Snowflake, Airflow, Coalesce, Collibra
-        </div>
-        <div class="tech-category">
-            <strong>Architecture:</strong> Microservices, Distributed Computing, Event-Driven Systems, APIs, Mobile Platform Integration, High Availability
-        </div>
-        <div class="tech-category">
-            <strong>AI/ML:</strong> RAG Pipelines, LLM Integration, Document Intelligence, HITL Systems, Conversational AI
-        </div>
-        <div class="tech-category">
-            <strong>Tools:</strong> Jira, Agile Central, Confluence, ServiceNow, Microsoft Project, SQL, Python, Java
-        </div>
-    </section>
-
+    <!-- ── EXPERIENCE ── -->
     <section id="experience">
-        <h2>Professional Experience</h2>
-
-        <div class="job">
-            <div class="job-header">
-                <div><span class="job-title">Senior Technical Program Manager — AI Initiatives</span> <br> <span class="company">Texas Capital Bank | San Antonio, TX</span></div>
-                <span class="dates">Oct 2024 – Present</span>
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">Career</p>
+                <h2>Professional Experience</h2>
             </div>
-            <ul>
-                <li>Leading enterprise GenAI platform strategy across 4 concurrent initiatives—Loan Onboarding Automation, Ranger Chat with Office 365 integration, and Credit Risk Agent—securing $2M+ executive investment and delivering 60% cycle time reduction while eliminating 40+ hours/week of manual effort.</li>
-                <li>Orchestrating cross-functional delivery across Product, Engineering, Design, and Data Science teams—established technical governance frameworks aligned with enterprise risk management and secured C-suite approval for production AI deployment.</li>
-                <li>Built highly scalable AI platforms on AWS (Bedrock, Knowledge Bases, Lambda)—architected custom RAG pipelines processing 10,000+ document fields with 99%+ accuracy, implementing HITL validation and maintaining sub-2-second latency at scale.</li>
-                <li>Drove quantitative decision-making across competing initiatives—facilitated stakeholder workshops to quantify ROI, managed technical dependencies, and simplified complex architectural decisions to accelerate team velocity.</li>
-            </ul>
-        </div>
-
-        <div class="job">
-            <div class="job-header">
-                <div><span class="job-title">Senior Technical Program Manager — Data Modernization</span> <br> <span class="company">Texas Capital Bank | San Antonio, TX</span></div>
-                <span class="dates">Jan 2023 – Sep 2024</span>
+            <div class="timeline">
+                <div class="timeline-item current">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-dates">Oct 2024 – Present</div>
+                    <div class="timeline-title">Senior Technical Program Manager — AI Initiatives</div>
+                    <div class="timeline-company">Texas Capital Bank | TX</div>
+                    <ul class="timeline-bullets">
+                        <li>Leading enterprise GenAI platform strategy across 4 concurrent initiatives—Loan Onboarding Automation, Ranger Chat with Office 365 integration, and Credit Risk Agent—securing $2M+ executive investment</li>
+                        <li>Orchestrating cross-functional delivery across Product, Engineering, Design, and Data Science teams with technical governance frameworks aligned with enterprise risk management</li>
+                        <li>Architecting AI platforms on AWS (Bedrock, Knowledge Bases, Lambda) with custom RAG pipelines processing 10,000+ document fields with HITL validation</li>
+                        <li>Driving quantitative decision-making through stakeholder workshops to quantify ROI, managing dependencies, and simplifying complex architectural decisions</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-dates">Jan 2023 – Sep 2024</div>
+                    <div class="timeline-title">Senior Technical Program Manager — Data Modernization</div>
+                    <div class="timeline-company">Texas Capital Bank | TX</div>
+                    <ul class="timeline-bullets">
+                        <li>Owned end-to-end delivery of enterprise Data Modernization platform across 5 data domains (Deposits, Lending, Finance, Treasury, AUM) using AWS Glue, Snowflake, and Airflow processing 50+ source systems</li>
+                        <li>Secured cross-functional commitments from 15+ stakeholder groups, landing enterprise metadata standards and data quality frameworks with 99.9% SLA compliance</li>
+                        <li>Established Data Vault standards and TPM best practices reducing time-to-production by 50% and accelerating delivery by 30%</li>
+                        <li>Recognized with Technology All Star Award for on-time, within-budget delivery</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-dates">Jul 2017 – Dec 2022</div>
+                    <div class="timeline-title">Senior Manager / Lead Program Manager</div>
+                    <div class="timeline-company">USAA Bank (Tata Consultancy Services) | TX</div>
+                    <ul class="timeline-bullets">
+                        <li>Led Bank Credit Card Servicing platform modernization—cloud-native migration delivering RESTful APIs, microservices, and mobile-optimized services for 2M+ active cardholders</li>
+                        <li>Delivered $15M federal compliance program under OCC regulatory mandate across 200+ applications with 8+ agile teams, achieving 35% full automation of business controls</li>
+                        <li>Managed cross-functional team of 50 across 4 global locations; grew TPM talent through structured mentoring and career development programs</li>
+                        <li>Executed service account migration—3,000+ accounts, 18 months, zero production incidents; recognized with Special Initiative Award (2021) and Best Team Award (2017, 2021)</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-dates">Jul 2012 – Jun 2017</div>
+                    <div class="timeline-title">Technical Program Manager</div>
+                    <div class="timeline-company">USAA Bank (Tata Consultancy Services) | TX</div>
+                    <ul class="timeline-bullets">
+                        <li>Strategic direction and governance for $20M core banking infrastructure portfolio—10+ concurrent modernization initiatives with 100% on-time delivery</li>
+                        <li>Led core banking platform upgrade across 150+ applications with zero-incident migration; recognized with Technology Excellence Award (2014)</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-dates">Sep 2002 – Jun 2012</div>
+                    <div class="timeline-title">Project Manager / Lead Software Engineer</div>
+                    <div class="timeline-company">USAA Bank (TCS) | San Antonio &amp; Chennai</div>
+                    <ul class="timeline-bullets">
+                        <li>Progressive career growth from Software Engineer to Project Manager building distributed systems and architecture frameworks for core banking and card servicing platforms</li>
+                    </ul>
+                </div>
             </div>
-            <ul>
-                <li>Owned end-to-end delivery of enterprise Data Modernization platform—orchestrated 5 data domain teams (Deposits, Lending, Finance, Treasury, AUM) building distributed, cloud-native infrastructure using AWS Glue, Snowflake, and Airflow processing 10M+ daily transactions.</li>
-                <li>Secured cross-functional commitments from 15+ stakeholder groups—navigated competing priorities between Data Governance, Engineering, and Business teams to land enterprise metadata standards and data quality frameworks ensuring 99.9% SLA compliance.</li>
-                <li>Established technical standards and TPM best practices—created reusable patterns, CI/CD pipelines, and governance frameworks that reduced time-to-production by 50% and accelerated overall delivery by 30%.</li>
-                <li>Recognized with Technology All Star Award for delivering on-time and within budget while maintaining executive alignment through steering committee engagement and business value tracking.</li>
-            </ul>
         </div>
-
-        <div class="job">
-            <div class="job-header">
-                <div><span class="job-title">Senior Manager / Lead Program Manager</span> <br> <span class="company">USAA Bank (TCS) | San Antonio, TX</span></div>
-                <span class="dates">Jul 2017 – Dec 2022</span>
-            </div>
-            <ul>
-                <li>Led Bank Credit Card Servicing platform modernization—directed cloud-native migration delivering RESTful APIs, microservices architecture, and mobile-optimized services powering iOS/Android card management features, ensuring zero-downtime cutover for 2M+ active cardholders across origination and servicing systems.</li>
-                <li>Executed $20M Snowflake migration replacing legacy Netezza data warehouse—coordinated cross-functional teams across Data Engineering, Infrastructure, and Application Development, delivering distributed computing platform on-time with optimized query performance.</li>
-                <li>Delivered $15M federal compliance program under aggressive OCC timeline—identified controls gaps across 200+ applications, conceptualized automation framework achieving 35% full automation, reducing operational risk within highly regulated environment.</li>
-                <li>Built General Purpose DataMart as single source of truth for Core Banking—orchestrated ELT framework across 12 servicing and transactional systems, securing stakeholder alignment from 8 business units and enabling real-time analytics.</li>
-                <li>Managed cross-functional teams of 120 across 4 global locations—developed TPM talent through mentorship and coaching, established best practices, and recognized with Special Initiative Award (2021) and Best Team Award (2017, 2021).</li>
-            </ul>
-        </div>
-
-        <div class="job">
-            <div class="job-header">
-                <div><span class="job-title">Technical Program Manager</span> <br> <span class="company">USAA Bank (TCS) | San Antonio, TX</span></div>
-                <span class="dates">Jul 2012 – Jun 2017</span>
-            </div>
-            <ul>
-                <li>Provided strategic direction and governance for $20M core banking infrastructure portfolio—delivered 10+ concurrent modernization initiatives across retail banking, credit cards, and auto lending platforms with 100% on-time delivery.</li>
-                <li>Led core banking platform upgrade across 150+ applications—conducted impact assessments, coordinated stakeholders across engineering and business teams, and delivered zero-incident migration within highly regulated environment.</li>
-                <li>Recognized with Technology Excellence Award (2014) for significant contribution to distributed systems modernization and technical leadership demonstrating strong emotional intelligence and collaborative execution.</li>
-            </ul>
-        </div>
-        
-        <div class="job">
-            <div class="job-header">
-                <div><span class="job-title">Early Career: Project Manager / Lead Software Engineer</span> <br> <span class="company">USAA Bank (TCS) | San Antonio & Chennai</span></div>
-                <span class="dates">Sep 2002 – Jun 2012</span>
-            </div>
-            <p style="margin-top: 0;">Progressive career growth from Software Engineer to Project Manager building distributed systems. Designed architecture frameworks for core banking and credit card servicing platforms supporting web and mobile channels; served as Technical SME for Card Servicing infrastructure across origination and servicing systems.</p>
-        </div>
-
     </section>
 
+    <!-- ── PROJECTS ── -->
+    <section id="projects">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">Impact</p>
+                <h2>Key Programs &amp; Initiatives</h2>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <span class="project-tag tag-ai">AI / GenAI</span>
+                    <h3>Loan Onboarding Automation</h3>
+                    <p>AI-driven document intelligence platform using AWS Bedrock and Knowledge Bases to extract and validate 10,000+ fields with Human-in-the-Loop review, eliminating manual data entry.</p>
+                    <div class="project-metric">AWS Bedrock • RAG Pipelines • HITL</div>
+                </div>
+                <div class="project-card">
+                    <span class="project-tag tag-ai">AI / GenAI</span>
+                    <h3>Ranger Chat — Enterprise Conversational AI</h3>
+                    <p>Enterprise-grade conversational AI platform with custom RAG pipelines, extensible agent architecture, and Office 365 integration serving multiple business lines.</p>
+                    <div class="project-metric">Office 365 Integration • Multi-Business Line</div>
+                </div>
+                <div class="project-card">
+                    <span class="project-tag tag-data">Data Platform</span>
+                    <h3>Enterprise Data Modernization</h3>
+                    <p>Built decentralized, cloud-native data infrastructure across 5 domains using Snowflake, Airflow, AWS Glue, and Coalesce with Collibra governance.</p>
+                    <div class="project-metric">50+ Source Systems • 99.9% SLA • All Star Award</div>
+                </div>
+                <div class="project-card">
+                    <span class="project-tag tag-platform">Card Servicing</span>
+                    <h3>Credit Card Servicing Modernization</h3>
+                    <p>Led cloud-native migration of legacy card servicing systems delivering RESTful APIs, microservices architecture, and mobile-optimized services for origination and servicing.</p>
+                    <div class="project-metric">2M+ Cardholders • Cloud-Native • Mobile</div>
+                </div>
+                <div class="project-card">
+                    <span class="project-tag tag-compliance">Compliance</span>
+                    <h3>OCC Federal Compliance Program</h3>
+                    <p>Identified controls gaps across 200+ business applications under stringent OCC regulatory mandate. Conceptualized automation framework for business application controls.</p>
+                    <div class="project-metric">$15M Budget • 35% Automation • 10-Month Delivery</div>
+                </div>
+                <div class="project-card">
+                    <span class="project-tag tag-ai">AI / GenAI</span>
+                    <h3>Credit Risk Agent</h3>
+                    <p>Building Credit Risk Agent platform using AWS Bedrock and RAG pipelines, providing executives real-time analytics access instead of static reports.</p>
+                    <div class="project-metric">AWS Bedrock • Real-Time Analytics</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── THOUGHT LEADERSHIP ── -->
+    <section id="articles">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">Thought Leadership</p>
+                <h2>Writing &amp; Insights</h2>
+                <p>Sharing perspectives on AI, data modernization, and technology leadership</p>
+            </div>
+            <div class="articles-grid">
+                <!-- SUBSTACK ARTICLES - Update href with actual article URLs -->
+                <a href="https://anozofai.substack.com/p/ai-hype-or-real" target="_blank" class="article-card">
+                    <div class="article-source source-substack">Substack</div>
+                    <h3>AI — Hype or Real?</h3>
+                    <p>Answering The Billion-Dollar Question: Why did Big Techs Go All-In?</p>
+                    <div class="article-date">anozofai.substack.com</div>
+                </a>
+                <a href="https://anozofai.substack.com/p/can-llms-be-deterministic" target="_blank" class="article-card">
+                    <div class="article-source source-substack">Substack</div>
+                    <h3>Can LLMs be Deterministic?</h3>
+                    <p>Why Most People Struggle with AI (and How to Fix It).</p>
+                    <div class="article-date">anozofai.substack.com</div>
+                </a>
+                <a href="https://anozofai.substack.com/p/how-ai-thinks-vs-how-you-think" target="_blank" class="article-card">
+                    <div class="article-source source-substack">Substack</div>
+                    <h3>How AI Thinks vs How You Think</h3>
+                    <p>The Strawberry Test.</p>
+                    <div class="article-date">anozofai.substack.com</div>
+                </a>
+                <!-- LINKEDIN POSTS - Update href with actual post URLs -->
+                <a href="https://www.linkedin.com/feed/update/urn:li:activity:7426134864791281664/?originTrackingId=hK1ySsV0FbV%2BJLLH3BfsXw%3D%3D" target="_blank" class="article-card">
+                    <div class="article-source source-linkedin">LinkedIn</div>
+                    <h3>Claude - Tokenamics</h3>
+                    <p>Which workflows justify extended thinking? Which don't? The difference between a sustainable AI budget and runaway costs is knowing the difference.</p>
+                    <div class="article-date">LinkedIn Posts</div>
+                </a>
+                <a href="https://www.linkedin.com/feed/update/urn:li:activity:7429162093574258688/?originTrackingId=cjD%2BRsVz1dUl443qyqY9tw%3D%3D" target="_blank" class="article-card">
+                    <div class="article-source source-linkedin">LinkedIn</div>
+                    <h3>Enterprise Semantic Layer</h3>
+                    <p>The entire data warehouse paradigm was designed for human consumption through BI tools. Not for machines. Not for AI.</p>
+                    <div class="article-date">LinkedIn Posts</div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── CERTIFICATIONS ── -->
+    <section id="certifications">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">Credentials</p>
+                <h2>Certifications</h2>
+            </div>
+            <div class="certs-grid">
+                <div class="cert-card">
+                    <div class="cert-icon">&#x1F393;</div>
+                    <h3>Post Graduate Program in AI &amp; ML: Business Applications</h3>
+                    <p>University of Texas at Austin, McCombs School of Business — March 2025</p>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon">&#x2601;</div>
+                    <h3>Claude with Amazon Bedrock</h3>
+                    <p>Anthropic — February 2026</p>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon">&#x1F6E1;</div>
+                    <h3>AI Security &amp; Governance</h3>
+                    <p>Securiti — July 2025</p>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon">&#x1F6E1;</div>
+                    <h3>Machine Learning Foundations for Product Manager</h3>
+                    <p>Coursera — October 2025</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── EDUCATION ── -->
     <section id="education">
-        <h2>Education & Certifications</h2>
-        <ul>
-            <li><strong>Post Graduate Program in AI & Machine Learning: Business Applications</strong> - University of Texas at Austin, McCombs School of Business (March 2025)</li>
-            <li><strong>Bachelor of Computer Science and Engineering</strong> - Anna University, India (April 2002)</li>
-            <li><strong>Certifications:</strong> Claude with Amazon Bedrock (Anthropic, Feb 2025) • AI Security & Governance (Securiti) • TCS Certified Digital Leader</li>
-        </ul>
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">Education</p>
+                <h2>Academic Background</h2>
+            </div>
+            <div class="edu-grid">
+                <div class="edu-card">
+                    <h3>Post Graduate Program in AI &amp; Machine Learning: Business Applications</h3>
+                    <div class="edu-school">University of Texas at Austin, McCombs School of Business</div>
+                    <div class="edu-date">March 2025</div>
+                </div>
+                <div class="edu-card">
+                    <h3>Bachelor of Computer Science and Engineering</h3>
+                    <div class="edu-school">Anna University, India</div>
+                    <div class="edu-date">April 2002</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── CONTACT ── -->
+    <section id="contact">
+        <div class="container" style="text-align:center;">
+            <div class="section-header" style="display:flex;flex-direction:column;align-items:center;">
+                <p class="section-label" style="color:var(--gold-light);">Connect</p>
+                <h2>Let's Talk</h2>
+                <p>Interested in discussing AI platforms, data modernization, or technology leadership?</p>
+            </div>
+            <div class="contact-grid">
+                <a href="mailto:saravanan.kuppan@gmail.com" class="contact-link">&#x2709;&#xFE0F; saravanan.kuppan@gmail.com</a>
+                <a href="https://www.linkedin.com/in/saravanan-kuppan-146b3419" target="_blank" class="contact-link">&#x1F4BC; LinkedIn</a>
+                <a href="https://github.com/skuppan80" target="_blank" class="contact-link">&#x1F4BB; GitHub</a>
+                <a href="https://anozofai.substack.com" target="_blank" class="contact-link">&#x270D;&#xFE0F; Substack</a>
+            </div>
+        </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Saravanan Kuppan. Hosted on GitHub Pages.</p>
+        <div class="container">
+            <p>&copy; 2026 Saravanan Kuppan. Built with passion for AI and innovation.</p>
+        </div>
     </footer>
-</div>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Scroll-triggered animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, i) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, i * 80);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.timeline-item, .project-card, .article-card, .cert-card').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
 
 </body>
 </html>
